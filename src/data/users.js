@@ -1,5 +1,6 @@
 const Queue = require('./queue');
 const users = [
+  { name: 'Thinkful'},
   { name: 'Jon' },
   { name: 'Jane' },
   { name: 'Sammy' },
