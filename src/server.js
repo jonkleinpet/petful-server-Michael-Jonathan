@@ -1,8 +1,12 @@
 const express = require('express');
 const cors = require('cors');
+const catRoute = require('../src/routes/cats/catsRoute');
+const dogRoute = require('./routes/dogs/dogsRoute');
 
 const app = express();
 app.use(cors());
+app.use('/api/cat', catRoute);
+app.use('/api/dog', dogRoute);
 
 // Catch-all 404
 app.use(function (req, res, next) {
@@ -21,6 +25,7 @@ app.use(function (err, req, res, next) {
   });
 });
 
-app.listen(8000,()=>{
+
+app.listen(8000, () => {
   console.log('Serving on 8000');
 });
