@@ -8,9 +8,13 @@ usersRoute
     const users = usersService.displayUsers();
     res.status(200).send(users);
   })
+  .post((req, res, next) => {
+    usersService.enqueueUser();
+    res.status(200).json({ name: 'realUser' });
+  })
   .delete((req, res, next) => {
-    const user = usersService.getDogForAdoption();
-    res.status(204).send(user);
+    const user = usersService.dequeueUser();
+    res.status(200).send(user);
   });
   
 module.exports = usersRoute;

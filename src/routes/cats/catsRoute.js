@@ -10,7 +10,7 @@ catsRoute
   })
   .delete((req, res, next) => {
     const adoptedCat = catsService.getCatForAdoption();
-    res.status(204).send(adoptedCat);
+    res.status(200).send(adoptedCat);
   });
 
 module.exports = catsRoute;

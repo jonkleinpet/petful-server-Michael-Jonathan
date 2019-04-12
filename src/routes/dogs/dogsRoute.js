@@ -10,7 +10,7 @@ dogsRoute
   })
   .delete((req, res, next) => {
     const adoptedDog = dogsService.getDogForAdoption();
-    res.status(204).send(adoptedDog);
+    res.status(200).send(adoptedDog);
   });
 
 module.exports = dogsRoute;
