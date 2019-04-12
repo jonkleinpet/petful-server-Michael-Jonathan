@@ -100,6 +100,18 @@ const dogs = [
   }
 ];
 
+function requeueCats() {
+  for (let i = 0; i < cats.length; i++) {
+    catQueue.enqueue(cats[i]);
+  }
+}
+
+function requeueDogs() {
+  for (let i = 0; i < dogs.length; i++) {
+    dogQueue.enqueue(dogs[i]);
+  }
+}
+
 for (let i = 0; i < cats.length; i++) {
   catQueue.enqueue(cats[i]);
 }
@@ -110,4 +122,4 @@ for (let i = 0; i < dogs.length; i++) {
 
 
 
-module.exports = { cats, dogs, catQueue, dogQueue };
+module.exports = { cats, dogs, catQueue, dogQueue, requeueCats, requeueDogs };
