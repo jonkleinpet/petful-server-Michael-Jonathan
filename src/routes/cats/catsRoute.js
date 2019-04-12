@@ -5,8 +5,8 @@ const catsService = require('./catsService');
 catsRoute
   .route('/')
   .get((req, res, next) => {
-    const cat = catsService.displayCat();
-    res.status(200).send(cat);
+    const cats = catsService.displayCats();
+    res.status(200).send(cats);
   })
   .delete((req, res, next) => {
     const adoptedCat = catsService.getCatForAdoption();

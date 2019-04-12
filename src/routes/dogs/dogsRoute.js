@@ -5,8 +5,8 @@ const dogsService = require('./dogsService');
 dogsRoute
   .route('/')
   .get((req, res, next) => {
-    const dog = dogsService.displayDog();
-    res.status(200).send(dog);
+    const dogs = dogsService.displayDogs();
+    res.status(200).send(dogs);
   })
   .delete((req, res, next) => {
     const adoptedDog = dogsService.getDogForAdoption();

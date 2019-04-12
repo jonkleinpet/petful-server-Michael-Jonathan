@@ -1,4 +1,5 @@
-const { catQueue } = require('../../data/animals.js');
+const { catQueue, cats } = require('../../data/animals.js');
+
 const catsService = {
   getCatForAdoption() {
     return catQueue.dequeue();
@@ -8,8 +9,8 @@ const catsService = {
     catQueue.enqueue(newCat);
   },
 
-  displayCat() {
-    return catQueue;
+  displayCats() {
+    return cats;
   }
 };
 

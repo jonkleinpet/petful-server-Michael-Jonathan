@@ -111,4 +111,4 @@ for (let i = 0; i < dogs.length; i++) {
 
 
 
-module.exports = { catQueue, dogQueue };
+module.exports = { cats, dogs, catQueue, dogQueue };

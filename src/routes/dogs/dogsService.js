@@ -1,4 +1,4 @@
-const { dogQueue } = require('../../data/animals.js');
+const { dogQueue, dogs } = require('../../data/animals.js');
 
 const dogsService = {
   getDogForAdoption() {
@@ -9,8 +9,8 @@ const dogsService = {
     dogQueue.enqueue(newDog);
   },
 
-  displayDog() {
-    return dogQueue.first;
+  displayDogs() {
+    return dogs;
   }
 };
 
