@@ -14,4 +14,4 @@ for (let i = 0; i < users.length; i++) {
   usersQueue.enqueue(users[i]);
 }
 
-module.exports = usersQueue;
+module.exports = { usersQueue, users };

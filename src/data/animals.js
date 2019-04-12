@@ -3,7 +3,6 @@ const Queue = require('./queue');
 let catQueue = new Queue();
 let dogQueue = new Queue();
 
-
 const cats = [
   {
     imageURL: 'https://assets3.thrillist.com/v1/image/2622128/size/tmg-slideshow_l.jpg',
