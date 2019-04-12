@@ -10,6 +10,9 @@ dogsRoute
   })
   .delete((req, res, next) => {
     const adoptedDog = dogsService.getDogForAdoption();
+    if (adoptedDog === null || adoptedDog === undefined) {
+      res.status(400).send({ message: 'could not find dog to delete' });
+    }
     res.status(200).send(adoptedDog);
   });
 

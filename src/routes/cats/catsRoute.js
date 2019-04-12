@@ -10,6 +10,9 @@ catsRoute
   })
   .delete((req, res, next) => {
     const adoptedCat = catsService.getCatForAdoption();
+    if (adoptedCat === null || adoptedCat === undefined) {
+      res.status(400).send({ message: 'could not find cat to delete' });
+    }
     res.status(200).send(adoptedCat);
   });
 

@@ -8,14 +8,8 @@ const usersService = {
 
   dequeueUser() {
     return usersQueue.dequeue();
-  },
-
-  enqueueUser() {
-    const user = {
-      name: 'You'
-    };
-    usersQueue.enqueue(user);
   }
+
 
 };
 

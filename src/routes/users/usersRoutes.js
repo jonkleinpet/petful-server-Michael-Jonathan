@@ -8,12 +8,12 @@ usersRoute
     const users = usersService.displayUsers();
     res.status(200).send(users);
   })
-  .post((req, res, next) => {
-    usersService.enqueueUser();
-    res.status(200).json({ name: 'realUser' });
-  })
   .delete((req, res, next) => {
     const user = usersService.dequeueUser();
+    console.log(user)
+    if (user === null || user === undefined) {
+      res.status(400).send({ message: 'could not find user to delete' });
+    }
     res.status(200).send(user);
   });
   
