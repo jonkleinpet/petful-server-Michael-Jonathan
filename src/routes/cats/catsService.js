@@ -9,7 +9,7 @@ const catsService = {
   },
 
   displayCat() {
-    return catQueue.first;
+    return catQueue;
   }
 };
 
