@@ -1,4 +1,4 @@
-const { catQueue, cats, requeueCats } = require('../../data/animals.js');
+const { catQueue, requeueCats } = require('../../data/animals.js');
 
 const catsService = {
   getCatForAdoption() {

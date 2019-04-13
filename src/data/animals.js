@@ -100,6 +100,32 @@ const dogs = [
   }
 ];
 
+// reset for production server
+setInterval(_resetCats, 60000);
+setInterval(_resetDogs, 60000);
+
+function _resetCats() {
+  let currentNode = catQueue.first;
+  while (currentNode !== null) {
+    catQueue.dequeue();
+    currentNode = currentNode.next;
+  }
+  for (let i = 0; i <= cats.length; i++) {
+    catQueue.enqueue(cats[i]);
+  }
+}
+
+function _resetDogs() {
+  let currentNode = dogQueue.first;
+  while (currentNode !== null) {
+    dogQueue.dequeue();
+    currentNode = currentNode.next;
+  }
+  for (let i = 0; i <= dogs.length; i++) {
+    dogQueue.enqueue(dogs[i]);
+  }
+}
+
 function requeueCats(queue) {
   for (let i = 0; i <= cats.length; i++) {
     queue.enqueue(cats[i]);
@@ -112,7 +138,7 @@ function requeueDogs(queue) {
   }
 }
 
-
+// initial queue up
 for (let i = 0; i <= cats.length; i++) {
   catQueue.enqueue(cats[i]);
 }
@@ -121,4 +147,11 @@ for (let i = 0; i <= dogs.length; i++) {
   dogQueue.enqueue(dogs[i]);
 }
 
-module.exports = { cats, dogs, catQueue, dogQueue, requeueCats, requeueDogs };
+module.exports = {
+  cats,
+  dogs,
+  catQueue,
+  dogQueue,
+  requeueCats,
+  requeueDogs
+};
