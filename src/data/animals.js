@@ -100,9 +100,6 @@ const dogs = [
   }
 ];
 
-// reset for production server
-setInterval(_resetCats, 60000);
-setInterval(_resetDogs, 60000);
 
 function _resetCats() {
   let currentNode = catQueue.first;
@@ -146,6 +143,10 @@ for (let i = 0; i <= cats.length; i++) {
 for (let i = 0; i <= dogs.length; i++) {
   dogQueue.enqueue(dogs[i]);
 }
+
+// reset for production server
+setInterval(_resetCats, 60000);
+setInterval(_resetDogs, 60000);
 
 module.exports = {
   cats,

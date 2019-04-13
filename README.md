@@ -19,3 +19,6 @@ https://github.com/thinkful-ei-armadillo/petful-client-Michael-Jonathan
 Express
 Cors
 nodemon
+
+## RESET
+The cats, dogs, and users queue resets every 1 minute to prevent empty queue senarios in production
