@@ -1,4 +1,6 @@
+require('dotenv').config();
 const express = require('express');
+const { PORT } = require('./config');
 const cors = require('cors');
 const catsRoute = require('../src/routes/cats/catsRoute');
 const dogsRoute = require('./routes/dogs/dogsRoute');
@@ -29,6 +31,6 @@ app.use(function (err, req, res, next) {
 
 
 
-app.listen(8000, () => {
+app.listen(PORT, () => {
   console.log('Serving on 8000');
 });
