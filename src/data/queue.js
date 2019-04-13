@@ -21,6 +21,7 @@ class Queue {
       this.first = node;
     }
 
+    
     if (this.last) {
       this.last.next = node;
       this.last.prev = node;

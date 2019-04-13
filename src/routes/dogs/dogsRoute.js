@@ -16,5 +16,4 @@ dogsRoute
     res.status(200).send(adoptedDog);
   });
 
-
 module.exports = dogsRoute;
